@@ -1,0 +1,61 @@
+<div class="container" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign.gt-md="space-around top" fxLayoutGap="10px"
+  fxLayoutGap.xs="0">
+
+  <div fxFlex="40">
+    <div fxFlex *ngIf="dish">
+      <md-card>
+        <md-card-header>
+          <h3>{{dish.name | uppercase}}</h3>
+        </md-card-header>
+        <img md-card-image src="{{dish.image}}" alt="dish.name">
+        <md-card-content>
+          <p>{{dish.description}}</p>
+        </md-card-content>
+        <md-card-actions>
+          <button md-button>LIKE</button>
+          <button md-button>SHARE</button>
+        </md-card-actions>
+      </md-card>
+    </div>
+  </div>
+
+  <div fxFlex="40">
+    <md-list fxFlex *ngIf="dish">
+      <md-list-item>
+        <h1>Comments</h1>
+      </md-list-item>
+
+      <md-list-item>
+        <p md-line>{{f_comment}}</p>
+        <p md-line>{{f_rate}} stars</p>
+        <p md-line>-- {{f_author}} {{f_date | date}}</p>
+      </md-list-item>
+
+      <md-list-item>
+        <p md-line>{{s_comment}}</p>
+        <p md-line>{{s_rate}} stars</p>
+        <p md-line>-- {{s_author}} {{s_date | date}}</p>
+      </md-list-item>
+
+      <md-list-item>
+        <p md-line>{{th_comment}}</p>
+        <p md-line>{{th_rate}} stars</p>
+        <p md-line>-- {{th_author}} {{th_date | date}}</p>
+      </md-list-item>
+
+      <md-list-item>
+        <p md-line>{{fo_comment}}</p>
+        <p md-line>{{fo_rate}} stars</p>
+        <p md-line>-- {{fo_author}} {{fo_date | date}}</p>
+      </md-list-item>
+
+      <md-list-item>
+        <p md-line>{{fi_comment}}</p>
+        <p md-line>{{fi_rate}} stars</p>
+        <p md-line>-- {{fi_author}} {{fi_date | date}}</p>
+      </md-list-item>
+
+    </md-list>
+  </div>
+
+</div>
