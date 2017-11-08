@@ -1,4 +1,4 @@
-<div class="container" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign.gt-md="space-around top" fxLayoutGap="10px"
+<div class="container" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign.gt-md="space-around center" fxLayoutGap="10px"
   fxLayoutGap.xs="0">
 
   <div fxFlex="40">
@@ -21,38 +21,13 @@
 
   <div fxFlex="40">
     <md-list fxFlex *ngIf="dish">
-      <md-list-item>
+      <div>
         <h1>Comments</h1>
-      </md-list-item>
-
-      <md-list-item>
-        <p md-line>{{f_comment}}</p>
-        <p md-line>{{f_rate}} stars</p>
-        <p md-line>-- {{f_author}} {{f_date | date}}</p>
-      </md-list-item>
-
-      <md-list-item>
-        <p md-line>{{s_comment}}</p>
-        <p md-line>{{s_rate}} stars</p>
-        <p md-line>-- {{s_author}} {{s_date | date}}</p>
-      </md-list-item>
-
-      <md-list-item>
-        <p md-line>{{th_comment}}</p>
-        <p md-line>{{th_rate}} stars</p>
-        <p md-line>-- {{th_author}} {{th_date | date}}</p>
-      </md-list-item>
-
-      <md-list-item>
-        <p md-line>{{fo_comment}}</p>
-        <p md-line>{{fo_rate}} stars</p>
-        <p md-line>-- {{fo_author}} {{fo_date | date}}</p>
-      </md-list-item>
-
-      <md-list-item>
-        <p md-line>{{fi_comment}}</p>
-        <p md-line>{{fi_rate}} stars</p>
-        <p md-line>-- {{fi_author}} {{fi_date | date}}</p>
+      </div>
+      <md-list-item *ngFor="let comments of dish.comments">
+        <p md-line>{{comments.comment}}</p>
+        <p md-line>{{comments.rating}} stars</p>
+        <p md-line>-- {{comments.author}} {{comments.date | date}}</p>
       </md-list-item>
 
     </md-list>
